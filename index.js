@@ -3,9 +3,10 @@ const express = require('express');
 const products = require('./routes/products');
 const app = express();
 
-mongoose.connect('mongodb://localhost/proxima')
-    .then(() => console.log('Connected to MongoDB...'))
-    .catch(err => console.error('Could not connect to MongoDb', err));
+mongoose
+  .connect('mongodb://localhost/blonduos')
+  .then(() => console.log('Connected to MongoDB...'))
+  .catch(err => console.error('Could not connect to MongoDb', err));
 
 app.use(express.json());
 app.use('/api/products', products);
